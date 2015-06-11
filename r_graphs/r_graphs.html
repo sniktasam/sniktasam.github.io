@@ -25,12 +25,16 @@
       </header>
       <section>
         <h2>Simple graphing in R</h2>
-        <h3>a simple tutorial for R code</h3>
+
         <h3>Background</h3>
-        <p>The ZERT Site at Montana State University, in Bozeman, has studied the fate of CO2 injected into a shallow pipe in an agricultural field for the last 8 years. The pipe is ~70m long, and buried ~1m under the surface of an unirrigated hay field. Injection events vary in length and volume, but in 2008, ~0.3 Mg CO2/d were injected. Most of this CO2 bubbles up through the pipe, bubbles through the shallow water table, leaks through the soil and into the atmosphere, where ZERT scientists have tested methods to detect leakage from CO2 injection sites.</p>
-        <p>As soil scientists we wanted to know if it any of the leaked CO2 was taken up by plants, then turned into soil organic matter (by decay or root exudate). This is made possible by the fact that the carbon isotopes in the injected CO2 are different than those in naturally occuring CO2. The relative composition of C13 and C12 in ambient air, δ13C, is around -10 to -13‰, but the injected CO2 has a δ13C of -52‰. Thus, if injected CO2 has been uptaken, the soil around the injection hot-spot(where the most leakage was measured), should be depleted relative to un-changed soils.</p>
+        <p>The ZERT Site at Montana State University, in Bozeman, has studied the fate of CO<sub>2</sub> injected into a shallow pipe in an agricultural field for the last 8 years. The pipe is ~70m long, and buried ~1m under the surface of an unirrigated hay field. Injection events vary in length and volume, but in 2008, ~0.3 Mg CO<sub>2</sub>/d were injected. Most of this CO<sub>2</sub> bubbles up through the pipe, bubbles through the shallow water table, leaks through the soil and into the atmosphere, where ZERT scientists have tested methods to detect leakage from CO<sub>2</sub> injection sites.</p>
+        <p>As soil scientists we wanted to know if it any of the leaked CO<sub>2</sub> was taken up by plants, then turned into soil organic matter (by decay or root exudate). This is made possible by the fact that the carbon isotopes in the injected CO<sub>2</sub> are different than those in naturally occuring CO<sub>2</sub>. The relative composition of C13 and C12 in ambient air, δ13C, is around -10 to -13‰, but the injected CO<sub>2</sub> has a δ13C of -52‰. Thus, if injected CO<sub>2</sub> has been uptaken, the soil around the injection hot-spot(where the most leakage was measured), should be depleted relative to un-changed soils.</p>
         <p>We sampled ZERT soils in Fall 2014 (~1 month after injection) via push corer (1.58 x 30.0 cm) at locations 1, 2.5, 5, 10, and 50 m northwest and southeast of the 0,0 coordinate of the pipe. Six samples were collected from each core at 5 cm increments, dried, sieved to <2 mm, and ground in a ball mill. In December, 2014, triplicate samples (and blanks) from the 1- and 2.5-m cores (n=72) were sent to UC Davis Stable Isotope Facility(UCD-SIF) for δ13C analysis.</p>
         <p>The following is the process I used to graph the results we retrieved from UCD-SIF.</p>
+        <h3>Step 1</h3>
+        <p>I copied and pasted the data from UCD into a new .csv file. Its possible to do the averages and standard errors in R, but I find it easier in excel. See images below.</p>
+        <img src="/imgs/1.png" alt="Excel file" style="width:304px;height:228px;">
+        <img src="/imgs/2.png" alt="CSV file" style="width:304px;height:228px;">
         <script src="https://gist.github.com/sniktasam/bdf9eabcc973a1bbecd2.js"></script>
 
 
