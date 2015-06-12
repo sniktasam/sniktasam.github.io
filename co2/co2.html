@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>co2 by sniktasam</title>
+
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>sniktasam</h1>
+        <p>What happens between pastry breaks</p>
+
+        <p class="view"><a href="https://github.com/sniktasam">my github</a></p>
+        <p class="view"><a href="https://github.com/sniktasam/r_graphs/r_graphs.html">R graphing</a></p>
+        <p class="view"><a href="https://sam-atkins.com">sam-atkins.com</a></p>
+
+      </header>
+      <section>
+        <h2>A basic CO<sub>2</sub> stream</h2>
+        <p>Live streaming data is something that sounds great to most scientists. For us environmental scientists, the prospect of live data eliminating the tedious “sneaker-netting” of data (that is manually plugging-in to offload records), is a sort of nirvana – a technological paradise where data magically appears when and where you want it. Of course, <a href=”https://www.campbellsci.com/cr200x-series”>these systems</a>  have existed for years, but they are clunky, and more importantly costly! As technological know-how increases, the day grows ever closer when a button-click (or screen-tap) will offer immediate information about our surroundings. This is the central idea behind the “Internet of Things (IOT)” movement, and its potential for environmental science and <a href=”grows ever closer “>education</a>has not gone un-noticed.</p>
+
+        <p>Our lab has a slick piece of equipment that measures CO2 gas. Its called a Li-Cor 820, and its great for high-accuracy measurements, but it doesn't connect to the internet very easily. I was tasked with the simple premise of making a public keeling curve for our lab, basically to put CO2 data from the Li-Cor onto the internet.</p>
+        <a href = "https://raw.githubusercontent.com/sniktasam/sniktasam.github.io/master/imgs/outline.png"><img src="/imgs/outline.png" alt="CO2" style="width:100%"></a>
+
+        <p>After much research I settled on using <a href=”https://plot.ly/”>Plot.ly</a>, mostly because I'm shallow and they make pretty graphs, but also because of a nifty streaming python-api. I'm programming mostly in python these days, so not having to mess with node servers or mysql/php was an upshot, and they have great documentation.</p>
+        <p>I came up with the python script below: </p>
+        <script src="https://gist.github.com/sniktasam/2ef7816a61132a9b9df8.js"></script>
+        <p>which takes the xml stream that comes into the computer (via serial.readline()), and adds those values, along with a time-stamp, to a stream of data that goes directly to plotly's servers, and makes a nice looking graph! Check out the code for yourself, and let me know if you have questions.</p>
+
+        <div>
+    <a href="https://plot.ly/~sniktasam/201/" target="_blank" title="Live CO2 from MSU-Bozeman" style="display: block; text-align: center;"><img src="https://plot.ly/~sniktasam/201.png" alt="Live CO2 from MSU-Bozeman" style="max-width: 100%;"  onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="sniktasam:201" src="https://plot.ly/embed.js" async></script>
+        </div>
+
+
+        <h3>Background</h3>
+
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+
+  </body>
+</html>
