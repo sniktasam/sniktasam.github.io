@@ -10,7 +10,7 @@ function loadCircularHeatMap (dataset, dom_element_to_append_to,radial_labels,se
     var chart = circularHeatChart()
     .innerRadius(innerRadius)
     .segmentHeight(segmentHeight)
-    .range(["white", "#01579b"])
+    .range(["white", "red"])
     .radialLabels(radial_labels)
     .segmentLabels(segment_labels);
     chart.accessor(function(d) {return d.value;})
@@ -40,10 +40,9 @@ function loadCircularHeatMap (dataset, dom_element_to_append_to,radial_labels,se
 
     svg.selectAll("path")
     .on('mouseover', function(d) {
-        tooltip.select('.month').html("<b> Month: " + d.month + "</b>");
-        tooltip.select('.type').html("<b> Type: " + d.type + "</b>");
-        tooltip.select('.value').html("<b> Value: " + d.value + "</b>");
-
+        tooltip.select('.month').html("<b> Aspect: " + d.aspect + "</b>");
+        /*tooltip.select('.type').html("<b> Type: " + d.type + "</b>");*/
+        tooltip.select('.value').html("<b> Percent: " + d.value + "</b>");
         tooltip.style('display', 'block');
         tooltip.style('opacity',2);
     })
@@ -60,7 +59,7 @@ function loadCircularHeatMap (dataset, dom_element_to_append_to,radial_labels,se
 
 function circularHeatChart() {
     var margin = {top: 20, right: 20, bottom: 20, left: 20},
-    innerRadius = 20,
+    innerRadius = 30,
     numSegments = 8,
     segmentHeight = 20,
     domain = null,
@@ -89,7 +88,7 @@ function circularHeatChart() {
             g.selectAll("path").data(data)
                 .enter().append("path")
                 .attr("d", d3.svg.arc().innerRadius(ir).outerRadius(or).startAngle(sa).endAngle(ea))
-                .attr("stroke", function(d) {return "#4f5b69";})
+                .attr("stroke", function(d) {return "#ffffff";})
                 .attr("fill", function(d) {return color(accessor(d));});
 
             // Unique id so that the text path defs are unique - is there a better way to do this?
@@ -113,16 +112,16 @@ function circularHeatChart() {
                             " a" + r + " " + r + " 0 1 1 -1 0";
                 });
 
-            labels.selectAll("text")
-                .data(radialLabels).enter()
-                .append("text")
-                .append("textPath")
-                .attr("xlink:href", function(d, i) {return "#radial-label-path-"+id+"-"+i;})
-                .style("font-size", "16px")
-                .text(function(d) {return d;});
+            //labels.selectAll("text")
+            //    .data(radialLabels).enter()
+            //    .append("text")
+            //    .append("textPath")
+            //    .attr("xlink:href", function(d, i) {return "#radial-label-path-"+id+"-"+i;})
+            //    .style("font-size", "16px")
+            //    .text(function(d) {return d;});
 
             //Segment labels
-            var segmentLabelOffset = 2;
+            var segmentLabelOffset = 15;
             var r = innerRadius + Math.ceil(data.length / numSegments) * segmentHeight + segmentLabelOffset;
             labels = svg.append("g")
                 .classed("labels", true)

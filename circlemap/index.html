@@ -11,21 +11,24 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="main.js"></script>
+<h1>Avalanche Fatalities by Aspect, December thru February</h1>
+<p>shown as percentage of total accidents, 1970-present, n=299</p>
 </head>
 
 <body>
     <div style="margin-left:50px;"  id="chart"></div>
+
 </body>
 <script>
     var inputData =
-    [{aspect:1,type:"Dec Feb Percent",value:15.38},
-    {aspect:2,type:"Dec Feb Percent",value:20.07},
-    {aspect:3,type:"Dec Feb Percent",value:27.09},
-    {aspect:4,type:"Dec Feb Percent",value:9.70},
-    {aspect:5,type:"Dec Feb Percent",value:7.69},
-    {aspect:6,type:"Dec Feb Percent",value:3.34},
-    {aspect:7,type:"Dec Feb Percent",value:6.35},
-    {aspect:8,type:"Dec Feb Percent",value:10.37},
+    [{aspect:'N',type:"Dec Feb Percent",value:15.38},
+    {aspect:'NE',type:"Dec Feb Percent",value:20.07},
+    {aspect:'E',type:"Dec Feb Percent",value:27.09},
+    {aspect:'SE',type:"Dec Feb Percent",value:9.70},
+    {aspect:'S',type:"Dec Feb Percent",value:7.69},
+    {aspect:'SW',type:"Dec Feb Percent",value:3.34},
+    {aspect:'W',type:"Dec Feb Percent",value:6.35},
+    {aspect:'NW',type:"Dec Feb Percent",value:10.37},
     ];
     var radial_labels = ["Dec Feb Percent"];
     var segment_labels = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
