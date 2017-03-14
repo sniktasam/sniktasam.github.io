@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Circular Heat Map</title>
+
+<!-- JavaScript Libraries //-->
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<!-- CSS Style //-->
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+    <div style="margin-left:50px;"  id="chart"></div>
+</body>
+<script>
+    var inputData =
+    [{aspect:1,type:"Dec Feb Percent",value:15.38},
+    {aspect:2,type:"Dec Feb Percent",value:20.07},
+    {aspect:3,type:"Dec Feb Percent",value:27.09},
+    {aspect:4,type:"Dec Feb Percent",value:9.70},
+    {aspect:5,type:"Dec Feb Percent",value:7.69},
+    {aspect:6,type:"Dec Feb Percent",value:3.34},
+    {aspect:7,type:"Dec Feb Percent",value:6.35},
+    {aspect:8,type:"Dec Feb Percent",value:10.37},
+    ];
+    var radial_labels = ["Dec Feb Percent"];
+    var segment_labels = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+
+    loadCircularHeatMap(inputData,"#chart",radial_labels, segment_labels);
+</script>
+</html>
